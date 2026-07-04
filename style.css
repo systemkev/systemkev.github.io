@@ -1,0 +1,45 @@
+body {
+    background-color: #301014;
+    font-family: 'EB Garamond', serif;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+h1 {
+    color: #FFC800; 
+    text-align: center;  
+}
+
+h2 {
+    color: white;
+    text-align: center;  
+}
+
+h3 {
+    color: #FFC800;
+    font-size: 28px;
+    margin-bottom: 0;
+}
+
+h4 {
+    color: white;
+    text-align: center; 
+}
+
+h5 {
+    color: white;
+    font-size: 23px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+p {
+    color: white;
+    font-size: 23px;
+}
+
+ul {
+    color: white;
+    font-size: 23px;
+    margin-top: 0;
+}
