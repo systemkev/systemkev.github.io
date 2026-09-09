@@ -4,55 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Access Kevin</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #301014;
+            font-family: 'EB Garamond', serif;
+            padding-left: 15%;
+            padding-right: 15%;
+            padding-bottom: 5%;
+        }
+
+        h1 {
+            color: #FFC800; 
+            text-align: center;  
+        }
+
+        h2 {
+            color: white;
+            text-align: center;  
+        }
+
+        h3 {
+            color: #FFC800;
+            font-size: 28px;
+            margin-bottom: 10px;
+            margin-top: 40px;
+            border-bottom: 1px solid #FFC800;
+            padding-bottom: 5px;
+        }
+
+        h4 {
+            color: white;
+            text-align: center; 
+        }
+
+        h5 {
+            color: white;
+            font-size: 23px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: white;
+            font-size: 23px;
+            line-height: 1.4;
+        }
+
+        ul {
+            color: white;
+            font-size: 23px;
+            margin-top: 0;
+            line-height: 1.4;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* --- Content Block CSS --- */
+        .content-block {
+            border: 1px solid #FFC800;
+            background-color: #fdf5e6; /* Warm off-white/cream */
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        /* Override global text colors for elements inside the content block */
+        .content-block h5, 
+        .content-block p, 
+        .content-block ul, 
+        .content-block li {
+            color: #1a1a1a; /* Dark gray/near-black for readability */
+        }
+
+        /* Remove top margin from the first heading inside a block so it aligns nicely */
+        .content-block h5:first-child {
+            margin-top: 0;
+        }
+
+        /* Remove bottom margin from the last element inside a block to prevent extra space */
+        .content-block > *:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Helper class for diagram placeholders */
+        .diagram-placeholder {
+            border: 2px dashed #b38b00; /* Darker gold to stand out on the light background */
+            padding: 20px;
+            text-align: center;
+            color: #1a1a1a;
+            margin: 20px 0;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
     <h1>Kevin Toledo Fernandez</h1>
     <h2>Electrical Engineering at the Massachusetts Institute of Technology</h2>
-    <h4> Email: ktoledo@mit.edu <br> Phone: 305~300~8124</h4>
+    <h2> 
+        Email: ktoledo@mit.edu &nbsp;|&nbsp; 
+        Phone: 305-300-8124 &nbsp;|&nbsp; 
+        GitHub: systemkev
+    </h2>
 
     <p> 
         Hi there! My name is Kevin and I am an incoming senior at MIT, where I study electrical engineering in the EECS department.
     </p>
 
-    <h3> Brief Bio</h3>
+    <h3>Education</h3>
+    <div class="content-block">
+        <ul>
+            <li><strong>Massachusetts Institute of Technology (MIT)</strong> – BS in Electrical Engineering (GPA: 3.8/4.0) | <em> May 2027</em></li>
+            <li><strong>Courses:</strong> FPGA, Analog & Digital Electronics, Embedded Design, Power Electronics, Signal Processing, RF, E&M</li>
+        </ul>
+    </div>
 
-    <ul>
-        <li> Currently, I am an FPGA design engineering intern at Blue Origin (Honeybee Robotics).</li>
-        <li> I previously interned at the Waters Corporation as an electrical engineer. </li>
-        <li> I am passionate about embedded design and hardware engineering, with experience
-            in C/C++, Verilog/SystemVerilog, VHDL, BluespecSV, Python, MATLAB/Simulink, and Assembly.
-            I have significant experience using Vivado for synthesis, ModelSim/QuestaSim, Git, 
-            Altium/KiCad for PCB design, Cadence for layout, oscilloscopes, and logic analyzers.
-         </li>
+    <h3>Brief Bio</h3>
+    <div class="content-block">
+        <ul>
+            <li> This summer, I was an FPGA design engineering intern at Blue Origin (Honeybee Robotics).</li>
+            <li> I previously interned at the Waters Corporation as an electrical engineer. </li>
+            <li> I am passionate about embedded design and hardware engineering, with experience
+                in C/C++, Verilog/SystemVerilog, VHDL, BluespecSV, Python, MATLAB/Simulink, and Assembly.
+                I have significant experience using Vivado for synthesis/simulation, ModelSim/QuestaSim, Git, 
+                Altium/KiCad for PCB design, Cadence for layout, oscilloscopes, and logic analyzers.
+             </li>
+             <li> I have experience with bus protocols like AXI-Full, AXI-Stream, AXI-LIte, I2C, SPI, and UART as well as concepts 
+                like clock domain crossing, FPGA static timing analysis, pipelining,
+                and digital signal processing.
+             </li>
+             <li> In the spring of 2026, I was a TA for MIT's Circuits and Electronics class. I also taught
+                a class for HSP that introduced students to electricity and magnetism, namely Maxwell's equations,
+                lumped-element circuit theory, and digital logic.
+            </li>
+        </ul>
+    </div>   
 
-         <li> I have experience with bus protocols like AXI, I2C, SPI, and UART as well as concepts 
-            like Clock Domain Crossing (CDC), FPGA timing analysis and pipelining,
-            and digital signal processing.
-         </li>
+    <h3>Experience</h3>
+    <div class="content-block">
+        <h5>FPGA Design Engineering Intern – Blue Origin (Honeybee Robotics)</h5>
+        <ul> 
+            <li>Developed a 1 MHz closed-loop BLDC motor emulator in VHDL for FPGA controller validation, using Euler integration, coupled-inductance matrix inversion, and KCL correction to model phase currents, back-EMF, and torque.</li>
+            <li>Modeled LVDT and resolver emulators driven by Butterworth low-pass-filtered PDM excitations, leveraging quadrant-folded BRAM sine LUTs for amplitude modulation and mechanical-to-electrical rotor angle conversion.</li>
+            <li>Developed a UVM-inspired verification environment with custom agents, scoreboards, and a behavioral reference model, validating emulator accuracy to within 3 mA.</li>
+        </ul>
+    </div>
 
-         <li> In the spring of 2026, I was a TA for MIT's Circuits and Electronics class. I also taught
-            a class for HSP that introduced students to electricity and magnetism, namely Maxwell's equations,
-            lumped-element circuit theory, and digital logic.
-        </li>
-    </ul>   
+    <h3>Projects</h3>
+    
+    <div class="content-block">
+        <h5>FPGA Ethernet/UDP Offload Engine with Custom AXI4 DMA (SystemVerilog)</h5>
+        <ul>
+            <li>Designed a custom 100-Mb/s Ethernet MAC in SystemVerilog for an MII PHY, with RX/TX framing, preamble/SFD handling, CRC32/FCS, padding/IFG, dual-bank BRAM buffering, and CDC PHY↔system clock handshakes.</li>
+            <li>Built a hardware Ethernet/IPv4/UDP engine with AXI4-Stream interfaces, implementing packet parsing/generation, dynamic IPv4 checksums, ARP responses, per-packet MAC/IP/port metadata, and verification with Scapy/Wireshark.</li>
+            <li>Developed bidirectional AXI4 S2MM/MM2S DMA to 256-MB DDR3 via MIG/SmartConnect, handling bursts, AXI responses, TKEEP→WSTRB, partial words, 4-KB boundaries, and ping-pong buffers for byte-exact PC→FPGA→DDR3→FPGA→PC transfers.</li>
+        </ul>
+        
+    </div>
 
-    <h3> Projects </h3>
+    <div class="content-block">
+        <h5>VHDL-Based Field Oriented Control Engine for a PMSM (Design in VHDL, Verification in SystemVerilog)</h5>
+        <ul>
+            <li>Designed an FOC motor controller in VHDL, integrating AS5048A encoder feedback, XADC phase-current sensing, a CORDIC, Clarke/Park transforms, cascaded position/velocity/current control loops, and Space Vector PWM.</li>
+            <li>Engineered fixed-point DSP datapaths with pipelined arithmetic, Q-format scaling, and PI anti-windup; synchronized sampling to PWM periods and implemented XADC offset calibration plus sensor-timeout fault protection.</li>
+            <li>Achieved post-route timing closure at 100 MHz on the Artix-7 XC7A100T, with 0.491ns worst setup slack and 0.010ns worst hold slack; implementation used 3.36K LUTs, 2.65K registers, and 42 DSP slices, with ~0.123 W on-chip power.</li>
+        </ul>
 
-    <h5> Blue Origin </h5>
-    <ul> 
-        <li> 
-            Developed and verified RTL modules for the Thrust Vector Control of Blue Origin's Lunar Lander.
-        </li>
+        <div class="svg-display" style="margin: 20px 0; text-align: center;">
+            <img src="block_diagram.svg" alt="Project Diagram" style="max-width: 100%; height: auto; border: 1px solid #FFC800; border-radius: 5px; padding: 10px; background-color: white;">
+        </div>
 
-        <li> 
-            Architected a comprehensive Hardware-in-the-Loop (HIL) emulation suite for the TVC system, including a three-phase brushless DC motor model and high-fidelity emulations of resolvers, LVDTs, and ADC interfaces.
-        </li>
+        <div class="pdf-embed" style="margin: 20px 0;">
+            <object data="foc_report.pdf" type="application/pdf" width="100%" height="800">
+                <p style="color:#1a1a1a;">
+                    Your browser could not display the embedded PDF.
+                    <a href="foc_report.pdf" target="_blank" rel="noopener">Open the FOC PDF</a>.
+                </p>
+            </object>
+        </div>
 
-        <li> 
-            Accelerated development cycles by enabling full-system RTL validation in a virtual environment, eliminating reliance on scarce physical hardware prototypes.
-        </li>
-    </ul>
+    </div>
+
+    <div class="content-block">
+        <h5>Speculative 5-Stage RISC-V CPU with Branch Prediction, Caching, and AXI Interface (SystemVerilog)</h5>
+        <ul>
+            <li>Designed a 5-stage pipelined RISC-V processor in SystemVerilog, integrating fetch, decode, execute, memory, and writeback stages with hazard detection, pipeline stalls/flushes, branch recovery, and memory backpressure handling.</li>
+            <li>Integrated a 64-entry dynamic branch predictor and 1 KiB L1 data cache, using a BTB with 2-bit saturating branch-history counters and a direct-mapped, write-back/write-allocate cache with dirty-line eviction and refill logic.</li>
+            <li>Synthesized and implemented the processor SoC plus UART infrastructure on a Xilinx A7-100T FPGA at 100 MHz, achieving 0.086 ns setup slack and 0.056 ns hold slack; implementation reported 0.149 W total on-chip power.</li>
+        </ul>
+
+        <div class="pdf-embed" style="margin: 20px 0;">
+            <object data="risc_report.pdf" type="application/pdf" width="100%" height="800">
+                <p style="color:#1a1a1a;">
+                    Your browser could not display the embedded PDF.
+                    <a href="risc_report.pdf" target="_blank" rel="noopener">Open the RISC PDF</a>.
+                </p>
+            </object>
+        </div>
+    </div>
+
+    <h3>Skills</h3>
+    <div class="content-block">
+        <ul>
+            <li><strong>HDL/FPGA:</strong> SystemVerilog, VHDL, RTL Design, Pipelining, DSP, CDC, FIFOs, BRAM, Timing Closure / STA</li>
+            <li><strong>Protocols/Interfaces:</strong> AXI4-Lite/Full/Stream, Ethernet/MII, IPv4, UDP, ARP, SPI, UART, DDR3/MIG</li>
+            <li><strong>Tools:</strong> Xilinx Vivado, Questa/ModelSim, PSoC Creator, Git, Tcl</li>
+            <li><strong>Programming:</strong> C/C++, Python</li>
+        </ul>
+    </div>
 </body>
 </html>
